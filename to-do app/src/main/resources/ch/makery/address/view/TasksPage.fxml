@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.TasksPageController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="292.0" layoutY="201.0" prefHeight="160.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="taskTable" layoutX="26.0" layoutY="46.0" prefHeight="402.0" prefWidth="495.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
+                    <columns>
+                        <TableColumn fx:id="priorityColumn" prefWidth="112.0" styleClass="priority-column" text="Priority" />
+                      <TableColumn fx:id="titleColumn" prefWidth="270.0" text="Title" />
+                      <TableColumn fx:id="dueColumn" prefWidth="113.0" styleClass="due-column" text="Due" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label alignment="CENTER" layoutX="84.0" prefHeight="44.0" prefWidth="327.0" styleClass="label-header" text="Tasks" textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="459.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleAddTask" styleClass="header-side-buttons" text="+" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="6.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Add Task" />
+                     </tooltip></Button>
+                  <Button layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleInstruction" prefHeight="35.0" prefWidth="35.0" styleClass="header-side-buttons" text="?" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="6.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Instructions" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="popUpLabel" alignment="CENTER" layoutX="138.0" layoutY="239.0" text="Select a task to view more details" AnchorPane.bottomAnchor="238.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="239.0" />
+                  <VBox fx:id="taskInfo" prefHeight="430.0" prefWidth="146.0" spacing="5.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="63.0">
+                     <children>
+                        <Separator prefHeight="2.0" prefWidth="466.0" />
+                        <Label fx:id="titleLabel" styleClass="title-label" text="Title" wrapText="true">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="descriptionLabel" styleClass="description-label" text="Description" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <CheckBox fx:id="taskCheck" disable="true" mnemonicParsing="false" prefHeight="31.0" prefWidth="31.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <tooltip>
+                        <Tooltip text="Check Task" />
+                     </tooltip>
+                  </CheckBox>
+                  <HBox fx:id="changesBar" layoutX="74.0" layoutY="14.0" prefHeight="33.0" prefWidth="320.0" spacing="10.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <Label text="Due:">
+                           <padding>
+                              <Insets top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="dueDateDisplay" styleClass="due-date-display-label" text="Due Date" />
+                        <Label text="  Priority:">
+                           <padding>
+                              <Insets left="10.0" top="6.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="priorityMenu" styleClass="priority-display-label" text="Priority" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="removeButton" layoutX="401.0" layoutY="447.0" mnemonicParsing="false" onAction="#handleRemoveTask" text="Remove" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                     <tooltip>
+                        <Tooltip text="Remove Task" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="editButton" contentDisplay="CENTER" layoutX="427.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleModifyTask" prefHeight="30.0" text="Edit" textAlignment="CENTER" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <tooltip>
+                        <Tooltip text="Edit Task" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.RootLayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu text="_File">
+            <items>
+                  <MenuItem onAction="#handleTasksPage" text="_Tasks" />
+              <MenuItem onAction="#handleClose" text="_Close" />
+            </items>
+          </Menu>
+          <Menu text="_Edit">
+            <items>
+                  <MenuItem onAction="#handleAdd" text="_Add" />
+                  <MenuItem onAction="#handleModify" text="_Modify" />
+              <MenuItem onAction="#handleDelete" text="_Delete" />
+            </items>
+          </Menu>
+          <Menu text="_Help">
+            <items>
+                  <MenuItem onAction="#handleInstruction" text="_Instructions" />
+              <MenuItem onAction="#handleAbout" text="_About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

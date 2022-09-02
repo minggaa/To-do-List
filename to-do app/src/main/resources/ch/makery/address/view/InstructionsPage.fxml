@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.InstructionsPageController">
+   <children>
+      <HBox alignment="CENTER" layoutX="150.0" layoutY="17.0" spacing="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="17.0">
+         <children>
+            <Label alignment="CENTER" styleClass="instruction-label" text="Instructions" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#handleInstruction" prefHeight="35.0" prefWidth="35.0" styleClass="instruct-button" text="?">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Click me for more details." />
+               </tooltip>
+            </Button>
+         </children>
+      </HBox>
+      <Button layoutX="80.0" layoutY="47.0" mnemonicParsing="false" onAction="#handleBack" text="Back" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="27.0">
+         <tooltip>
+            <Tooltip text="Return to Tasks Page" />
+         </tooltip></Button>
+      <TabPane layoutX="261.0" layoutY="103.0" prefHeight="393.0" prefWidth="890.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="80.0">
+        <tabs>
+          <Tab text="Tasks View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="592.0" styleClass="tab-anchor-pane">
+                     <children>
+                        <Group layoutX="24.0" layoutY="16.0" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="24.0">
+                           <children>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="293.0">
+                                 <fill>
+                                    <LinearGradient endX="0.5194174757281553" endY="1.0" startX="0.5">
+                                       <stops>
+                                          <Stop color="#ffc593" />
+                                          <Stop color="#dfae86" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Rectangle>
+                              <Button layoutX="9.0" layoutY="9.0" mnemonicParsing="false" styleClass="instruct-button" text="+">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="Add Task" />
+                                 </tooltip>
+                              </Button>
+                              <Label layoutX="61.0" layoutY="7.0" prefHeight="40.0" prefWidth="219.0" styleClass="instruct-label-dark" text="This is an Add Task button, click on it when adding a new task" wrapText="true" />
+                           </children>
+                        </Group>
+                        <TableView layoutX="24.0" layoutY="94.0" prefHeight="80.0" prefWidth="498.0" styleClass="instruct-table" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="94.0">
+                           <columns>
+                              <TableColumn prefWidth="130.0" styleClass="priority-column" text="Priority" />
+                              <TableColumn prefWidth="232.0" text="Title" />
+                              <TableColumn prefWidth="133.0" styleClass="due-column" text="Due" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Label layoutX="24.0" layoutY="21.0" prefHeight="60.0" prefWidth="498.0" styleClass="instruct-label-light" text="This is a Task Table view, where the tasks created by users will be shown. By clicking on any existing task will provide user further details of the task in the Task Details Pane" textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="24.0" />
+                        <Label alignment="CENTER" layoutX="85.0" layoutY="187.0" prefHeight="24.0" prefWidth="376.0" styleClass="instruct-label-light-i" text="Task Table : Sample extract of the table for demonstration" textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="180.0" />
+                        <GridPane layoutX="24.0" layoutY="211.0" prefHeight="103.0" prefWidth="498.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="221.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="64.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.0" minWidth="10.0" prefWidth="434.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="60.0" prefWidth="480.0" styleClass="instruct-label-light" text="Signifies the level of importance/urgency that a task carries (ranges from I - IV, and an optional none)" textAlignment="JUSTIFY" wrapText="true" GridPane.columnIndex="1" />
+                              <Label alignment="CENTER" styleClass="instruct-label-light-bold" text="Priority:" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
+                              <Label alignment="CENTER" styleClass="instruct-label-light-bold" text="Title:" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Label alignment="CENTER" styleClass="instruct-label-light-bold" text="Due:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Label prefHeight="60.0" prefWidth="480.0" styleClass="instruct-label-light" text="Name that represents the Task to be performed." textAlignment="JUSTIFY" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label prefHeight="60.0" prefWidth="480.0" styleClass="instruct-label-light" text="Shows the deadline of the task in date format of (YYYY/MM/DD)." textAlignment="JUSTIFY" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Label layoutX="573.0" layoutY="225.0" prefHeight="89.0" prefWidth="293.0" styleClass="instruct-label-light" text="Users are also allowed to sort the Tasks in ascending or descending order based on the category (Priority, Title, Due), by clicking on the respective columns." textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="220.0" />
+                        <Label layoutX="573.0" layoutY="119.0" prefHeight="73.0" prefWidth="293.0" styleClass="instruct-label-light" text="By holding on the bar in in between each column headers, users can resize each column to be customized to one's viewing needs." textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="114.0" />
+                        <Label layoutX="575.0" layoutY="94.0" prefHeight="20.0" prefWidth="293.0" styleClass="instruct-label-light-bold" text="Column Resizing" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="96.0" />
+                        <Label layoutX="573.0" layoutY="204.0" styleClass="instruct-label-light-bold" text="Category Sorting" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="200.0" />
+                        <Separator layoutX="544.0" layoutY="27.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="1.0" AnchorPane.bottomAnchor="24.0" AnchorPane.topAnchor="24.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Tasks Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="tab-anchor-pane">
+                     <children>
+                        <Label layoutX="24.0" layoutY="24.0" prefHeight="64.0" prefWidth="400.0" text="Upon selecting a Task in the Table View, this pane is to provide user's with information about the Tasks they have set, and actions to interact with the Tasks." textAlignment="JUSTIFY" wrapText="true" />
+                        <Label layoutX="24.0" layoutY="101.0" styleClass="instruct-label-light" text="These actions include:" />
+                        <HBox layoutX="24.0" layoutY="175.0" prefWidth="401.0" spacing="18.0">
+                           <children>
+                              <Label prefHeight="20.0" prefWidth="71.0" styleClass="instruct-label-light-bold" text="Edit:" />
+                              <Label prefHeight="40.0" prefWidth="312.0" styleClass="instruct-label-light" text="To make changes to the Task, such as changing Due date, Priority levels, Description or Title, etc." textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="24.0" layoutY="223.0" spacing="30.0">
+                           <children>
+                              <Label styleClass="instruct-label-light-bold" text="Remove:" />
+                              <Label prefHeight="20.0" prefWidth="312.0" text="To remove the Task selected." textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="24.0" layoutY="129.0" spacing="10.0">
+                           <children>
+                              <Label styleClass="instruct-label-light-bold" text="Task Check:" />
+                              <Label prefHeight="40.0" prefWidth="312.0" styleClass="instruct-label-light" text="Checking this box will signify the completion of selected the Task. (try it out in Edit/Add Task)" textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="25.0" layoutY="256.0" prefHeight="64.0" prefWidth="400.0" text="If the contents of the Task (Task title, Task Description) ever gets too long and becomes hidden, the view can be readjusted by adjusting the separator or window to display more content." textAlignment="JUSTIFY" wrapText="true" />
+                        <Separator layoutX="444.0" layoutY="28.0" orientation="VERTICAL" prefHeight="292.0" prefWidth="1.0" />
+                        <CheckBox fx:id="instructTaskCheckVisual" disable="true" layoutX="466.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleInstructCheck" AnchorPane.leftAnchor="466.0" AnchorPane.topAnchor="29.0">
+                           <tooltip>
+                              <Tooltip text="Check to Complete Task" />
+                           </tooltip>
+                        </CheckBox>
+                        <HBox fx:id="instructTopBar" layoutX="517.0" layoutY="24.0" prefHeight="33.0" prefWidth="261.0" spacing="20.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="24.0">
+                           <children>
+                              <DatePicker prefHeight="33.0" prefWidth="147.0" promptText="(MM/DD/YYYY)">
+                                 <tooltip>
+                                    <Tooltip text="Task Due Date" />
+                                 </tooltip>
+                              </DatePicker>
+                              <MenuButton fx:id="instructDPriorityMenu" mnemonicParsing="false" prefWidth="92.0" text="Priority">
+                                 <tooltip>
+                                    <Tooltip text="Task Priority Level" />
+                                 </tooltip>
+                              </MenuButton>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="466.0" layoutY="74.0" prefHeight="1.0" prefWidth="401.0" AnchorPane.leftAnchor="467.0" AnchorPane.rightAnchor="24.0" />
+                        <VBox fx:id="instructTaskDetails" layoutX="466.0" layoutY="89.0" spacing="5.0">
+                           <children>
+                              <Label styleClass="instruct-task-title-label" text="Sample Task" />
+                              <Label styleClass="instruct-task-description-label" text="Sample Task Description." />
+                           </children>
+                        </VBox>
+                        <HBox layoutX="791.0" layoutY="189.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="189.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Remove">
+                                 <tooltip>
+                                    <Tooltip text="Remove Task" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Separator layoutX="466.0" layoutY="243.0" prefHeight="1.0" prefWidth="401.0" AnchorPane.leftAnchor="467.0" AnchorPane.rightAnchor="24.0" />
+                        <Group layoutX="465.0" layoutY="267.0" AnchorPane.leftAnchor="466.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="267.0">
+                           <children>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0">
+                                 <fill>
+                                    <LinearGradient endX="0.5194174757281553" endY="1.0" startX="0.5">
+                                       <stops>
+                                          <Stop color="#ffc593" />
+                                          <Stop color="#dfae86" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Rectangle>
+                              <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" styleClass="instruct-button-2" text="Button">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip text="This is a Button!" />
+                                 </tooltip>
+                              </Button>
+                              <Label layoutX="97.0" layoutY="7.0" prefHeight="40.0" prefWidth="292.0" styleClass="instruct-label-dark" text="Most buttons or inputs, when hovered, will display an information bubble of what it does." textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </Group>
+                        <Button fx:id="instructEditButton" layoutX="819.0" layoutY="24.0" mnemonicParsing="false" text="Edit" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="24.0">
+                           <tooltip>
+                              <Tooltip text="Edit Task" />
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Edit/Add Task">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="tab-anchor-pane">
+                     <children>
+                        <Separator layoutX="445.0" layoutY="28.0" orientation="VERTICAL" prefHeight="291.0" prefWidth="1.0" AnchorPane.bottomAnchor="29.0" AnchorPane.topAnchor="28.0" />
+                        <Group layoutX="24.0" layoutY="24.0">
+                           <children>
+                              <Label styleClass="instruct-label-title-light" text="Sample Add/Edit Task" />
+                              <Label layoutY="24.0" prefHeight="27.0" prefWidth="394.0" styleClass="instruct-label-light" text="As a sample, input details are listed in their respective fields." textAlignment="JUSTIFY" wrapText="true" />
+                              <GridPane layoutY="66.0" prefHeight="151.0" prefWidth="395.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="94.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="317.0" minWidth="10.0" prefWidth="301.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label styleClass="instruct-label-light" text="Title" />
+                                    <Label styleClass="instruct-label-light" text="Due" GridPane.rowIndex="1" />
+                                    <Label styleClass="instruct-label-light" text="Description" GridPane.rowIndex="2" />
+                                    <TextField styleClass="instruct-text-field" text="This is to enter the name of your Task." GridPane.columnIndex="1" />
+                                    <TextArea prefHeight="200.0" prefWidth="301.0" styleClass="instruct-text-area" text="Users are given the option to fill in this field, provided they have more details to include for their task. &#10;Total number of charaters should not exceed 254 characters!!" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <DatePicker prefHeight="33.0" prefWidth="236.0" promptText="Hover me for more details." styleClass="instruct-date-picker" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <tooltip>
+                                          <Tooltip text="This sets the Task's due date. Users can either choose from the calander, or type out in the format of (MM/DD/YYYY)" />
+                                       </tooltip></DatePicker>
+                                 </children>
+                              </GridPane>
+                              <MenuButton fx:id="instructAEPriorityMenu" layoutY="266.0" mnemonicParsing="false" prefWidth="92.0" text="Priority">
+                                 <tooltip>
+                                    <Tooltip text="Here is where a Task's priority can be set based on the options given." />
+                                 </tooltip>
+                              </MenuButton>
+                              <HBox layoutX="267.0" layoutY="265.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Cancel">
+                                       <tooltip>
+                                          <Tooltip text="Click this button when wanting to cancel Add/Editing Task." />
+                                       </tooltip>
+                                    </Button>
+                                    <Button mnemonicParsing="false" text="Done">
+                                       <tooltip>
+                                          <Tooltip text="After all necessary task details are included, click this button to Add/finish Editing Task." />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutY="229.0" spacing="10.0">
+                                 <children>
+                                    <Label styleClass="instruct-label-light-bold" text="Task Complete?" />
+                                    <CheckBox fx:id="instructTaskCheck" mnemonicParsing="false" onAction="#handleInstructCheck">
+                                       <tooltip>
+                                          <Tooltip text="Check to Complete Task (checking here will dim the Task Details pane to signify Task completion)" />
+                                       </tooltip>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                              <Label layoutX="99.0" layoutY="271.0" prefHeight="20.0" prefWidth="81.0" text="&lt; Hover me" />
+                           </children>
+                        </Group>
+                        <Label layoutX="446.0" layoutY="24.0" styleClass="instruct-label-title-light" text="Adding Task" AnchorPane.leftAnchor="470.0" AnchorPane.topAnchor="24.0" />
+                        <Label layoutX="470.0" layoutY="174.0" styleClass="instruct-label-title-light" text="Editing Task" AnchorPane.leftAnchor="470.0" AnchorPane.topAnchor="170.0" />
+                        <Label layoutX="470.0" layoutY="48.0" prefHeight="43.0" prefWidth="396.0" styleClass="instruct-label-light" text="Upon entering the Add Task dialog,  users will be greeted with empty input fields (as shown in Sample on the left). " textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="470.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="48.0" />
+                        <Label layoutX="470.0" layoutY="97.0" prefWidth="396.0" text="The required fields to be filled are Title, Due and Priority, as they are essential in defining a Task." wrapText="true" AnchorPane.leftAnchor="470.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="97.0" />
+                        <Label layoutX="470.0" layoutY="198.0" prefHeight="63.0" prefWidth="396.0" styleClass="instruct-label-light" text="Sharing the same dialog as Add Task, when editing a Task, the fields will be filled based on the data of the selected Task rather than being empty." textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="470.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="195.0" />
+                        <Label layoutX="468.0" layoutY="261.0" prefHeight="63.0" prefWidth="396.0" styleClass="instruct-label-light" text="User's are free to interact and replace old information of the Tasks with new ones, like updating Due dates or Description, etc." textAlignment="JUSTIFY" wrapText="true" AnchorPane.leftAnchor="470.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="261.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Menu Bar">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="tab-anchor-pane">
+                     <children>
+                        <Group layoutX="297.0" layoutY="29.0" AnchorPane.leftAnchor="297.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="24.0">
+                           <children>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" height="83.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="295.0">
+                                 <fill>
+                                    <LinearGradient endX="0.5194174757281553" endY="1.0" startX="0.5097087378640777">
+                                       <stops>
+                                          <Stop color="#ffd6b7" />
+                                          <Stop color="#ffd6b7" offset="0.007246376811594203" />
+                                          <Stop color="#ffc593" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                              </Rectangle>
+                              <MenuBar layoutX="48.0" layoutY="11.0" prefHeight="35.0" prefWidth="198.0" styleClass="instruct-menu-bar">
+                                 <menus>
+                                    <Menu text="_File">
+                                       <items>
+                                          <MenuItem text="_Tasks" />
+                                          <MenuItem text="_Close" />
+                                       </items>
+                                    </Menu>
+                                    <Menu text="_Edit">
+                                       <items>
+                                          <MenuItem text="_Add" />
+                                          <MenuItem text="_Modify" />
+                                          <MenuItem text="_Delete" />
+                                       </items>
+                                    </Menu>
+                                    <Menu text="_Help">
+                                       <items>
+                                          <MenuItem text="_Instructions" />
+                                          <MenuItem text="_About" />
+                                       </items>
+                                    </Menu>
+                                 </menus>
+                              </MenuBar>
+                              <Label alignment="CENTER" layoutX="23.0" layoutY="53.0" styleClass="instruct-label-dark-i" text="Menu Bar: Sample extract of a menu bar." />
+                           </children>
+                        </Group>
+                        <Group layoutX="31.0" layoutY="123.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="49.0" prefHeight="20.0" prefWidth="146.0" styleClass="instruct-label-title-light" text="Naviagation" />
+                              <Label layoutY="29.0" prefHeight="45.0" prefWidth="244.0" styleClass="instruct-label-light" text="Users are allowed to navigate through the app through the menu bar." textAlignment="JUSTIFY" wrapText="true" />
+                              <Label layoutY="77.0" prefHeight="54.0" prefWidth="244.0" styleClass="instruct-label-light" text="Under File &gt; Tasks, allows users to navigate to the Tasks Page. " textAlignment="JUSTIFY" wrapText="true" />
+                              <Label layoutY="131.0" prefHeight="54.0" prefWidth="244.0" styleClass="instruct-label-light" text="Under Help &gt; Instructions, allows users to navigate to the Instructions Page. " textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </Group>
+                        <Separator layoutX="289.0" layoutY="130.0" orientation="VERTICAL" prefHeight="195.0" prefWidth="1.0" AnchorPane.bottomAnchor="24.0" />
+                        <Group layoutX="311.0" layoutY="125.0" AnchorPane.bottomAnchor="24.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="98.0" prefHeight="20.0" prefWidth="72.0" styleClass="instruct-label-title-light" text="Actions" />
+                              <Label layoutY="27.0" prefHeight="70.0" prefWidth="268.0" styleClass="instruct-label-light" text="Various actions can be performed under the Edit menu provided the user is on the right page (Tasks page)." textAlignment="JUSTIFY" wrapText="true" />
+                              <Label layoutY="97.0" prefHeight="105.0" prefWidth="268.0" styleClass="instruct-label-light" text="If user is on a different page and attempts to perform an action, a pop up dialog will display a warning to the user and asks if they wish to return to the Tasks page to perform desired action." textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </Group>
+                        <Separator layoutX="599.0" layoutY="126.0" orientation="VERTICAL" prefHeight="195.0" prefWidth="1.0" AnchorPane.bottomAnchor="24.0" />
+                        <Group layoutX="621.0" layoutY="123.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="24.0" prefHeight="20.0" prefWidth="196.0" styleClass="instruct-label-title-light" text="Mnemonic Parsing" />
+                              <Label layoutY="24.0" prefHeight="72.0" prefWidth="244.0" styleClass="instruct-label-light" text="Provides users with the option to navigate through and use the menu bar through the use of their keyboard" textAlignment="JUSTIFY" wrapText="true" />
+                              <Label layoutY="96.0" prefHeight="85.0" prefWidth="244.0" styleClass="instruct-label-light" text="By holding the 'Alt' key + the initial letter (will be underlined when holding Alt) of the desired menu option, allows that specific menu to be accessed." textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </Group>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
